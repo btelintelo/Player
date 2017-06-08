@@ -223,23 +223,23 @@ open class Player: UIViewController {
     open var playbackEdgeTriggered: Bool = true
 
     /// Maximum duration of playback.
-    open var maximumDuration: TimeInterval {
+    open var maximumDuration: TimeInterval? {
         get {
             if let playerItem = self._playerItem {
                 return CMTimeGetSeconds(playerItem.duration)
             } else {
-                return CMTimeGetSeconds(kCMTimeIndefinite)
+                return nil
             }
         }
     }
 
     /// Media playback's current time.
-    open var currentTime: TimeInterval {
+    open var currentTime: TimeInterval? {
         get {
             if let playerItem = self._playerItem {
                 return CMTimeGetSeconds(playerItem.currentTime())
             } else {
-                return CMTimeGetSeconds(kCMTimeIndefinite)
+                return nil
             }
         }
     }
