@@ -689,10 +689,6 @@ extension Player {
                 // PlayerKeepUpKey
                 
                 if let item = self._playerItem {
-                    self.bufferingState = .ready
-                    
-                    if item.isPlaybackLikelyToKeepUp && self.playbackState == .playing {
-                        self.play()
                     if item.isPlaybackLikelyToKeepUp {
                         self.bufferingState = .ready
                         if self.playbackState == .playing{
