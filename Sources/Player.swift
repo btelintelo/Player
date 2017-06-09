@@ -693,6 +693,11 @@ extension Player {
                     
                     if item.isPlaybackLikelyToKeepUp && self.playbackState == .playing {
                         self.play()
+                    if item.isPlaybackLikelyToKeepUp {
+                        self.bufferingState = .ready
+                        if self.playbackState == .playing{
+                            self.playFromCurrentTime()
+                        }
                     }
                 }
                 
