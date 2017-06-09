@@ -768,6 +768,13 @@ extension Player {
                     
                 }
                 
+                }
+            else if (keyPath == PlayerRateKey){
+                if let playerItem = self._playerItem{
+                    if playerItem.isPlaybackLikelyToKeepUp && playbackState == .failed{
+                        self.play()
+                    }
+                }
             }
         
         } else if (context == &PlayerLayerObserverContext) {
